@@ -5,5 +5,6 @@ env:
   - version=1.1
 install: npm install
 script: 
-  - echo $docker_hub_username
-  # - docker build -f docker1/Dockerfile docker1 -t shaohua1990/docker1:$(version)
+  - docker login -u $docker_hub_username -p $docker_hub_password
+  - docker build -f docker1/Dockerfile docker1 -t shaohua1990/docker1:$(version)
+  - docker push shaohua1990/docker1:$(version)

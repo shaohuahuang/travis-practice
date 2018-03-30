@@ -1,3 +1,9 @@
-language: node_js
+sudo: required
+services:
+  - docker
+env:
+  - version=1.1
 install: npm install
-script: true
+script: 
+  - echo $version
+  # - docker build -f docker1/Dockerfile docker1 -t shaohua1990/docker1:$(version)

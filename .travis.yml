@@ -2,9 +2,13 @@ sudo: required
 services:
   - docker
 env:
-  - version=1.1
+  - version=1.2
 install: npm install
 script: 
   - docker login -u $docker_hub_username -p $docker_hub_password
-  - docker build -f docker1/Dockerfile docker1 -t shaohua1990/docker1:${version}
-  - docker push shaohua1990/docker1:${version}
+  
+  - docker build -f docker1/Dockerfile docker1 -t shaohua1990/docker1:${version} -t shaohua1990/docker1 
+  - docker push shaohua1990/docker1
+  
+  - docker build -f docker2/Dockerfile docker2 -t shaohua1990/docker2:${version} -t shaohua1990/docker2 
+  - docker push shaohua1990/docker2

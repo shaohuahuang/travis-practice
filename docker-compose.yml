@@ -1,0 +1,5 @@
+docker1:
+  image: shaohua1990/docker1
+
+docker2:
+  image: shaohua1990/docker2
